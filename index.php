@@ -18,7 +18,7 @@ include_once "project/app/controller/Client/ClientController.php";
 // gọi thằng cha trở về
 $Admicontroller = new AdminController();
 $Clientcontroller = new ClientController();
-
+// $checkConnect = new ConnectDatabase();
 // logic điều hướng
 switch ($Admicontroller->GETURL()) {
     case "":
@@ -38,6 +38,9 @@ switch ($Admicontroller->GETURL()) {
         break;
     case "client":
         $Clientcontroller->Profile();
+        break;
+    case "disconnect":
+        include "project/app/view/Disconnect.php";
         break;
     default:
         include "project/app/view/404.php";

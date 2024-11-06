@@ -9,6 +9,8 @@ class ConnectDatabase extends Config
     public $USERNAE = parent::USERNAME;
     public $PASSWORD = parent::PASSWORD;
     public $DBNAME = parent::DB_NAME;
+
+    public $statusConnect;
     public function __construct()
     {
         try {
@@ -17,9 +19,11 @@ class ConnectDatabase extends Config
                 $this->USERNAE,
                 $this->PASSWORD
             );
+            $this->statusConnect = true;
             //echo "Connect Succsses fully ";
         } catch (Exception $e) {
-            echo $e->getMessage();
+            $this->statusConnect = false;
+            // echo $e->getMessage();
         }
     }
 

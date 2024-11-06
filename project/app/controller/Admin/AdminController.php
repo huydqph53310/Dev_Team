@@ -90,7 +90,7 @@ class AdminController
                 $createUser = new users(
                     null,
                     $_POST["name"],
-                    $_POST["username"],
+                    strtolower($_POST["username"]),
                     $_POST["password"],
                     $_POST["email"],
                     phone: $_POST["phone"]
@@ -100,7 +100,7 @@ class AdminController
                 }
                 if ($tberr == "") {
                     $tbsus = "Đăng Ký tài khoản thành công";
-                    $this->swuser->ActionQuery("INSERT", "createuser", $createUser);
+                    $this->swuser->InsertUser($createUser);
                 }
             }
         } else {
@@ -125,4 +125,6 @@ class AdminController
             return $id;
         }
     }
+
+    // kiểm tra xem database đã conect chưa
 }
