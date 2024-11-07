@@ -15,7 +15,7 @@ class AdminController
 
     public function Trangchu()
     {
-        include "project/app/view/Home.php";
+        include "app/view/Home.php";
     }
 
     public function Login()
