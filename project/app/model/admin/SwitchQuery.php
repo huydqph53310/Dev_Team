@@ -2,17 +2,13 @@
 
 class SwitchQuery extends ConnectDatabase
 {
-    public function __construct()
-    {
-        parent::__construct();
-    }
-    public function __destruct() {}
+   
 
     // Thêm dữ liệu user lên database
     public function InsertUser(object $obj)
     {
         try {
-            $this->connect->query("USE " . parent::DB_NAME);
+            // $this->connect->query("USE " . parent::DB_NAME);
             $sql = "INSERT INTO `users` (`users_id`, `name`, `username`, `password`, `email`, `phone`, `action`, `ban`) VALUES (NULL, '$obj->name', '$obj->username', '$obj->password', '$obj->email', '$obj->phone', '0', '0')";
             $dataCheck = $this->connect->exec($sql);
             return $dataCheck;
@@ -39,7 +35,7 @@ class SwitchQuery extends ConnectDatabase
     public function FindUser($iduser)
     {
         try {
-            $this->connect->query("USE " . parent::DB_NAME);
+            // $this->connect->query("USE " . parent::DB_NAME);
             $sql = "SELECT * 
                     FROM `users` 
                     
@@ -68,7 +64,7 @@ class SwitchQuery extends ConnectDatabase
     public function DELETE($sql)
     {
         try {
-            $this->connect->query("USE " . parent::DB_NAME);
+            // $this->connect->query("USE " . parent::DB_NAME);
             $dataCheck = $this->connect->exec($sql);
         } catch (Exception $e) {
             // echo $e->getMessage();
