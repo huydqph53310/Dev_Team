@@ -47,7 +47,7 @@ class AdminController
         } else {
             header("Location: ?wh=");
         }
-        include "project/app/view/LoginScr/LoginScr.php";
+        include "app/view/LoginScr/LoginScr.php";
     }
 
     public function Logout()
@@ -106,7 +106,7 @@ class AdminController
         } else {
             header("Location: ?wh=");
         }
-        include "project/app/view/LoginScr/RegsiterScr.php";
+        include "app/view/LoginScr/RegsiterScr.php";
     }
 
     public function GETURL()

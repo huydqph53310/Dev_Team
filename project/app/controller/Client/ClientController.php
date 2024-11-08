@@ -28,6 +28,6 @@ class ClientController
     public function Profile()
     {
         $data = $this->swuser->FindUser($_SESSION["id"]);
-        include "project/app/view/LoginScr/Client.php";
+        include "app/view/LoginScr/Client.php";
     }
 }
